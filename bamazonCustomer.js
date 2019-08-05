@@ -85,6 +85,7 @@ function getData(id, quantity) {
 function checkAndUpdate(obj, userAmount){
     if (userAmount < obj.stock_quantity){
         console.log('\nThere is enough in stock!')
+        console.log(`Your total will be $${userAmount * obj.price}...`)
         updateDB(obj,userAmount)
     }else if (userAmount > obj.stock_quantity){
         console.log("Sorry. That purchase is too large for what we have in stock...")
